@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
-#import "MWPhotoBrowserCordova.h"
+#import "MWPhotoBrowser.h"
 
 @interface MWPhotoBrowserCordova : CDVPlugin <MWPhotoBrowserDelegate> {
 

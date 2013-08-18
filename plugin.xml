@@ -8,15 +8,15 @@
   <author>Calvin Lai</author>
   <description>Port of MWPhotoBrowser to Cordova.</description>
 
-  <js-module src="www/mw-photo-browser.js" name="MWPhotoBrowserCordova">
+  <js-module src="www/mw-photo-browser.js" name="MWPhotoBrowser">
     <clobbers target="plugins.mwPhotoBrowser" />
   </js-module>
 
   <!-- ios -->
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
-      <feature name="MWPhotoBrowserCordova">
-        <param name="ios-package" value="MWPhotoBrowserCordova" />
+      <feature name="MWPhotoBrowser">
+        <param name="ios-package" value="MWPhotoBrowser" />
       </feature>
     </config-file>
     <header-file src="src/ios/MWPhotoBrowserCordova.h" />
