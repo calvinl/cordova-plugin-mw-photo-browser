@@ -18,45 +18,45 @@
 @synthesize photos = _photos;
 
 - (NSMutableDictionary*)callbackIds {
-	if(_callbackIds == nil) {
-		_callbackIds = [[NSMutableDictionary alloc] init];
-	}
-	return _callbackIds;
+    if(_callbackIds == nil) {
+      _callbackIds = [[NSMutableDictionary alloc] init];
+    }
+    return _callbackIds;
 }
 
 - (void)showGallery:(CDVInvokedUrlCommand*)command {
     NSLog(@"showGalleryWith:%@", command.arguments);
-    
+
     [self.callbackIds setValue:command.callbackId forKey:@"showGallery"];
-    
+
     NSDictionary *options = [command.arguments objectAtIndex:0];
     NSMutableArray *images = [[NSMutableArray alloc] init];
     NSUInteger photoIndex = [[options objectForKey:@"index"] intValue];
-    
+
     for (NSString* url in [options objectForKey:@"images"])
     {
         [images addObject:[MWPhoto photoWithURL:[NSURL URLWithString: url]]];
     }
-    
+
     self.photos = images;
-    
+
     // Create & present browser
     MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate: self];
     // Set options
     browser.wantsFullScreenLayout = NO; // Decide if you want the photo browser full screen, i.e. whether the status bar is affected (defaults to YES)
     browser.displayActionButton = YES; // Show action button to save, copy or email photos (defaults to NO)
     [browser setInitialPageIndex: photoIndex]; // Example: allows second image to be presented first
-    
+
     // Modal
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
     nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self.viewController presentModalViewController:nc animated:YES];
-    [nc release];
-    
+    //[nc release];
+
     // Release
-	[browser release];
-	[images release];
- 
+    //[browser release];
+    //[images release];
+
 }
 
 #pragma mark - MWPhotoBrowserDelegate

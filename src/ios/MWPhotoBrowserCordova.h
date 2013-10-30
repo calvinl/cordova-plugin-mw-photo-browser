@@ -20,7 +20,6 @@
 @property (nonatomic, retain) NSMutableDictionary* callbackIds;
 @property (nonatomic, retain) NSArray *photos;
 
-- (void)showGallery:(NSArray *)images;
-
+- (void)showGallery:(CDVInvokedUrlCommand*)command;
 
 @end

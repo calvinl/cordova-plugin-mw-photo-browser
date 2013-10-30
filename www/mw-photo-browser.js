@@ -13,7 +13,7 @@ var MWPhotoBrowser = function() {
 
 // Call this to register for push notifications and retreive a deviceToken
 MWPhotoBrowser.prototype.showGallery = function(images, callback) {
-  cordova.exec(callback, callback, "MWPhotoBrowser", "showGallery", images ? [images] : []);
+  cordova.exec(callback, callback, "MWPhotoBrowserCordova", "showGallery", images ? [images] : []);
 };
 
 var mwPhotoBrowser = new MWPhotoBrowser();
