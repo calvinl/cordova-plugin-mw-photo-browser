@@ -45,7 +45,7 @@
     // Set options
     browser.wantsFullScreenLayout = NO; // Decide if you want the photo browser full screen, i.e. whether the status bar is affected (defaults to YES)
     browser.displayActionButton = YES; // Show action button to save, copy or email photos (defaults to NO)
-    [browser setInitialPageIndex: photoIndex]; // Example: allows second image to be presented first
+    [browser setCurrentPhotoIndex: photoIndex]; // Example: allows second image to be presented first
 
     // Modal
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
